@@ -169,8 +169,11 @@
                     Get the daily devotional delivered to your inbox every morning.
                     Start your day with purpose and principle.
                 </p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email address" class="subscribe-input" required>
+                <form class="subscribe-form" action="https://formspree.io/f/xgolydrp" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email address" class="subscribe-input"
+                        required>
+                    <input type="tel" name="phone" placeholder="Enter your phone number" class="subscribe-input">
+                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="btn btn-primary" style="border: none;">Subscribe</button>
                 </form>
                 <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
