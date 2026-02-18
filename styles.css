@@ -406,19 +406,63 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+/* Core Theme Highlight */
+.core-theme {
+    background: var(--primary-bg);
 }
 
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-primary);
-    margin: 3px 0;
-    transition: 0.4s;
+.core-theme .theme-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid var(--accent-gold);
+}
+
+/* Membership Structure */
+.membership-section {
+    background: var(--secondary-bg);
+}
+
+.membership-section .about-grid {
+    gap: 2rem;
+}
+
+.membership-section .about-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: var(--transition);
+    padding: 3rem;
+}
+
+.membership-section .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Who Section */
+.who-section {
+    background: var(--primary-bg);
+}
+
+.who-section .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.who-section h4 {
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    margin-bottom: 0;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.who-section h4:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+    transform: scale(1.05);
 }
 
 /* Responsive */
@@ -438,7 +482,6 @@ footer p {
         position: fixed;
         top: 0;
         right: -100%;
-        /* Hidden by default */
         width: 70%;
         height: 100vh;
         background: rgba(10, 25, 47, 0.98);
@@ -448,7 +491,6 @@ footer p {
         transition: 0.4s ease-in-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
         z-index: 1001;
-        /* Behind toggle button */
     }
 
     .nav-links.active {
@@ -460,7 +502,6 @@ footer p {
         margin: 1.5rem 0;
     }
 
-    /* Animate Hamburger into X */
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -472,12 +513,15 @@ footer p {
     .menu-toggle.is-active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
+    .who-section .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
     html {
         font-size: 14px;
-        /* Scale down root font size */
     }
 
     .hero-title {
@@ -490,7 +534,7 @@ footer p {
     }
 
     .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 2rem;
     }
 
@@ -502,15 +546,10 @@ footer p {
     }
 
     .theme-topics li {
-        padding-left: 0;
+        padding-left: 1.2rem;
         text-align: left;
-        display: inline-block;
-        /* Stack nicely or wrap? Actually blocked list is better */
         display: block;
         margin-bottom: 0.5rem;
-        padding-left: 1.2rem;
-        /* Keep bullet indent */
-        text-align: left;
     }
 
     .subscribe-form {
@@ -525,10 +564,6 @@ footer p {
 
     .devotional-card {
         padding: 1.5rem;
-    }
-
-    .wealth-principle-box p {
-        font-size: 1rem;
     }
 
     .section-padding {
@@ -553,5 +588,9 @@ footer p {
         gap: 0.5rem;
         width: 100%;
         padding: 0 1rem;
+    }
+
+    .who-section .about-grid {
+        grid-template-columns: 1fr;
     }
 }
